@@ -1,15 +1,66 @@
 import requests
 
-url_SF = "https://wttr.in/san%20francisco?nTqu&lang=en"
-url_Lon = "https://wttr.in/london?nTqu&lang=en"
-url_Sher = "https://wttr.in/~sheremetyevo?nTqu&lang=en"
-url_Cher = "https://wttr.in/Череповец?nTqmM&lang=ru"
+url_SF = "https://wttr.in/san%20francisco"
+params_SF = {"n": "", 
+            "T": "", 
+            "u": "", 
+            "q": "", 
+            "lang": "en",
+}
 
-locations = [url_SF, url_Lon, url_Sher, url_Cher]
+url_Lon = "https://wttr.in/london"
+params_Lon = {"n": "", 
+              "T": "", 
+              "u": "", 
+              "q": "", 
+              "lang": "en",
+            }
 
-def get_weather_forecast(url):
-    response = requests.get(url)
+url_Sher = "https://wttr.in/svo"
+params_Sher = {"n": "", 
+              "T": "", 
+              "u": "", 
+              "q": "", 
+              "lang": "en",
+              }
+
+url_Cher = "https://wttr.in/Череповец"
+params_Cher = {"n": "", 
+              "T": "", 
+              "M": "", 
+              "q": "", 
+              "lang": "ru",
+}
+
+
+url_Bad = "https://httpstat.us/"
+params_Bad = {"n": "", 
+            "T": "", 
+            "u": "", 
+            "q": "", 
+            "lang": "en",
+}
+
+
+locations = [(url_SF, params_SF), 
+             (url_Lon, params_Lon), 
+             # (url_Bad, params_Bad), 
+             (url_Sher, params_Sher), 
+             (url_Cher, params_Cher)
+            ]
+
+def get_weather_forecast(url, params):
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+    
+    except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError):
+        return None
     return response.text
 
-for loc in locations:
-    print(get_weather_forecast(loc))
+for loc, params in locations:
+    result = get_weather_forecast(loc, params)
+    if result is None:
+        print("Error in URL: ", loc)
+    else:
+        print(result)
