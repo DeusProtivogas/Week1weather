@@ -10,7 +10,7 @@ Requires "requests" library
 
 ### Process
 
-Run the script to get weather in 4 locations
+Run the "main.py" script to get weather in 4 locations
 
 ### Project Goals
 
