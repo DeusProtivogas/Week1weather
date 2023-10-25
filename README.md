@@ -8,6 +8,10 @@ The script should work in the console with Python installed
 
 Requires "requests" library
 
+### Process
+
+Run the script to get weather in 4 locations
+
 ### Project Goals
 
 This code was written for educational purposes as part of an online course for web developers at [dvmn.org](https://dvmn.org/).
