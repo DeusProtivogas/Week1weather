@@ -4,9 +4,17 @@ A small collection of scripts that shows weather in 4 locations (San Francisco, 
 
 ### How to install
 
-The script should work in the console with Python installed
+The script will work in the console with Python installed
 
-Requires "requests" library
+Requires "requests" library, which will be installed by running the script
+
+### To run
+In the concole, write the following:
+```
+python3 main.py
+```
+
+After that, you will get weather from 4 locations
 
 ### Process
 
