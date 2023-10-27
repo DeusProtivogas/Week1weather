@@ -9,7 +9,7 @@ The script will work in the console with Python installed
 Requires "requests" library, which will be installed by running the script
 
 ### To run
-In the concole, write the following:
+In the concole, run the following:
 ```
 python3 main.py
 ```
