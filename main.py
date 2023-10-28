@@ -1,4 +1,5 @@
 import requests
+from urllib.parse import urljoin
 
 url_base = "https://wttr.in/"
 
@@ -16,14 +17,11 @@ params_ru = {"n": "",
               "lang": "ru",
 }
 
-
-def get_url(location):
-    return url_base + location
-
-locations = [(get_url("san%20francisco"), params_en), 
-             (get_url("london"),params_en), 
-             (get_url("svo"), params_en), 
-             (get_url("Череповец"), params_ru)
+locations = [(urljoin(url_base, "san%20francisco"), params_en), 
+             (urljoin(url_base, "london"),params_en),  
+             (urljoin(url_base, "bad_place111"),params_en), 
+             (urljoin(url_base, "svo"), params_en), 
+             (urljoin(url_base, "Череповец"), params_ru)
             ]
 
 
@@ -36,12 +34,9 @@ def main():
     for loc, params in locations:
         try:
             result = get_weather_forecast(loc, params)
-            if result is None:
-                print (f"Error in URL: {loc}")
-            else:
-                print (result)
+            print (result)
         except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError) as e:
-            print (e) 
+            print (f"Error in URL: {loc}")
 
 if __name__ == "__main__":
     main()
