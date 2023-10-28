@@ -18,8 +18,7 @@ params_ru = {"n": "",
 }
 
 locations = [(urljoin(url_base, "san%20francisco"), params_en), 
-             (urljoin(url_base, "london"),params_en),  
-             (urljoin(url_base, "bad_place111"),params_en), 
+             (urljoin(url_base, "london"),params_en),
              (urljoin(url_base, "svo"), params_en), 
              (urljoin(url_base, "Череповец"), params_ru)
             ]

@@ -9,7 +9,12 @@ The script will work in the console with Python installed
 Requires "requests" library, which will be installed by running the script
 
 ### To run
-In the console, write the following:
+To install nesesary requirement, write:
+```
+pip install -r requirements.txt
+```
+
+To run code, write
 ```
 python3 main.py
 ```
