@@ -6,10 +6,10 @@ A small collection of scripts that shows weather in 4 locations (San Francisco, 
 
 The script will work in the console with Python installed
 
-Requires "requests" library, which will be installed by running the script
+Requires the "requests" library, which will be installed by running the script
 
 ### To run
-To install nesesary requirement, write:
+To install the necessary requirements, write:
 ```
 pip install -r requirements.txt
 ```
@@ -23,7 +23,7 @@ After that, you will get weather from 4 locations
 
 ### Process
 
-Run the "main.py" script to get weather in 4 locations
+Run the "main.py" script to get the weather in 4 locations
 
 ### Project Goals
 
